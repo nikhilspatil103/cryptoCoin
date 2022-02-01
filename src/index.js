@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 
-mongoose.connect("mongodb+srv://users-open-to-all:hiPassword123@cluster0.uh35t.mongodb.net/Nikhil_Patil?retryWrites=true&w=majority", {useNewUrlParser: true})
+mongoose.connect("mongodb+srv://vishal:project123@nodejsprojects.dfqks.mongodb.net/NikhilPatil_crypto?authSource=admin&replicaSet=atlas-i7c1ik-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true", {useNewUrlParser: true})
     .then(() => console.log('mongodb running on 27017'))
     .catch(err => console.log(err))
 

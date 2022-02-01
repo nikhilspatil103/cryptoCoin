@@ -13,6 +13,7 @@ const getCrypto = async function (req, res) {
 
         }
         let response = await axios(option)
+       
         let list = response.data.data
         for (i in list) {
 
@@ -22,12 +23,12 @@ const getCrypto = async function (req, res) {
                 marketCapUsd: list[i].marketCapUsd,
                 priceUsd: list[i].priceUsd
             }
-            let cryptoStrucure = await cryptoModel.create(cryptoData)
+             await cryptoModel.create(cryptoData)
         }
        
         let hrChanges = list.sort(function (a, b) { return b.changePercent24Hr - a.changePercent24Hr })
 
-        res.status(200).send({ status: true, Data: hrChanges })
+        res.status(201).send({ status: true, Data: hrChanges })
     } catch (err) {
         res.status(500).send({ status: true, msg: err.message })
     }
